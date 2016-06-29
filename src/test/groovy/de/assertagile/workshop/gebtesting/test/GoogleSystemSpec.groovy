@@ -1,13 +1,15 @@
 package de.assertagile.workshop.gebtesting.test
 
-import de.assertagile.workshop.gebtesting.test.actors.GoogleUserActor
+import de.assertagile.workshop.gebtesting.test.pages.GoogleStartPage
 import geb.spock.GebReportingSpec
 
 class GoogleSystemSpec extends GebReportingSpec {
 
-    final GoogleUserActor user = new GoogleUserActor(browser)
+    def "the Google start page should be reachable"() {
+        when:
+        browser.go(GoogleStartPage.url)
 
-    def "typing a single letter should make suggestions appear"() {
-        // TODO
+        then:
+        browser.at(GoogleStartPage)
     }
 }
