@@ -16,12 +16,15 @@ class GoogleSystemSpec extends GebReportingSpec {
 
     def "when entering one character suggestions should be displayed"() {
         given:
-        GoogleStartPage page = browser.to(GoogleStartPage)
+        GoogleStartPage startPage = browser.to(GoogleStartPage)
 
         when:
-        page.searchInput = "t"
+        startPage.searchInput = "t"
 
         then:
-        browser.at(GoogleResultPage)
+        GoogleResultPage resultPage = browser.at(GoogleResultPage)
+
+        and:
+        resultPage.suggestions
     }
 }
