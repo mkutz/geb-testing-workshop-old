@@ -1,5 +1,4 @@
-import org.openqa.selenium.firefox.FirefoxDriver
-
+import org.openqa.selenium.chrome.ChromeDriver
 /*
  * Configuration script for Geb tests. Configuration values might be overwritten using system properties or may be
  * during runtime in Groovy code.
@@ -22,4 +21,4 @@ waiting {
     retryInterval = 0.1
 }
 
-driver = { new FirefoxDriver() }
+driver = { new ChromeDriver() }

@@ -9,9 +9,9 @@ Objectives
 - [ ] Open [GoogleSystemSpec] and try to execute it. The test should succeed unless
   - Somebody deleted the internet (quite unlikely).
   - The structure of the Google start page has changed (more likely). Please file a bug in that case.
-  - Your local setup does not work (even more likely). Please check the [GebConfig] file and try `ChromeDriver` instead
-    of `FirefoxDriver`. If it still does not work, please search for help on the exception you see and feel free to
-    file a bug.
+  - Your local setup does not work (even more likely). Please check the [GebConfig] file and try `FirefoxDriver` instead
+    of `ChromeDriver`. If it still does not work, please search for help on the exception you see and feel free to file
+    a bug.
 - [ ] Write a simple feature method in [GoogleSystemSpec] that steers the browser to [GoogleStartPage].
   See [Geb manual on browser] and [Geb manual on pages].
 - [ ] Write a feature method in the [GoogleSystemSpec] that verifies the type ahead feature of the Google homepage:
