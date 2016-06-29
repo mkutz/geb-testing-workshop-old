@@ -14,6 +14,17 @@ class GoogleSystemSpec extends GebReportingSpec {
         browser.at(GoogleStartPage)
     }
 
+    def "when entering one character the page should chang to the results page"() {
+        given:
+        GoogleStartPage startPage = browser.to(GoogleStartPage)
+
+        when:
+        startPage.searchInput = "t"
+
+        then:
+        browser.at(GoogleResultPage)
+    }
+
     def "when entering one character suggestions should be displayed"() {
         given:
         GoogleStartPage startPage = browser.to(GoogleStartPage)
@@ -23,8 +34,23 @@ class GoogleSystemSpec extends GebReportingSpec {
 
         then:
         GoogleResultPage resultPage = browser.at(GoogleResultPage)
+        resultPage.suggestions
 
         and:
-        resultPage.suggestions
+        resultPage.suggestions.every { it.text().startsWith("t") }
+    }
+
+    def "when entering three or more letters results should be displayed"() {
+        given:
+        GoogleStartPage page = browser.to(GoogleStartPage)
+
+        when:
+        page.searchInput = "rew"
+
+        then:
+        GoogleResultPage resultPage = browser.at(GoogleResultPage)
+
+        and:
+        resultPage.results
     }
 }

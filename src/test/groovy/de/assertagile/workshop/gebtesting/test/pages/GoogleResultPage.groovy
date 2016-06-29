@@ -8,5 +8,6 @@ class GoogleResultPage extends Page {
 
     static content = {
         suggestions(wait: true) { $(".sbsb_b li").moduleList(SuggestionModule) }
+        results(wait: true) { $(".g").moduleList(ResultModule) }
     }
 }

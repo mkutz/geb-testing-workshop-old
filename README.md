@@ -14,7 +14,9 @@ Objectives
     a bug.
 - [X] Add a feature method in the [GoogleSystemSpec] that verifies the type ahead feature of the Google homepage:
   when the user inputs one letter into the query field, the page changes to [GoogleResultsPage].
-- [ ] Write another test the verify that suggestions are offered in a dropdown that are based on the input text.
+- [X] Write another test the verify that suggestions are offered in a dropdown that are based on the input text.
+  You might want to look into [Geb manual on waiting DSL]. There is more than one way to solve this.
+- [X] Add a test that verifies results are shown when entering three or more letters.
 - [ ] Try to put the duplicate code from your tests into methods of the [GoogleUserActor].
   For instance write a method, which returns all search results displayed as a list.
 
@@ -34,6 +36,7 @@ Helpful Resources and Further Reading
 [Geb manual]: <http://www.gebish.org/manual/current/>
 [Geb manual on browser]: <http://www.gebish.org/manual/current/#browser>
 [Geb manual on pages]: <http://www.gebish.org/manual/current/#pages>
+[Geb manual on waiting DSL]: <http://www.gebish.org/manual/current/#content-dsl-wait>
 
 [GoogleSystemSpec]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/GoogleSystemSpec.groovy>
 [GoogleStartPage]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/pages/GoogleStartPage.groovy>
