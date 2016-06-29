@@ -1,56 +1,47 @@
 package de.assertagile.workshop.gebtesting.test
 
+import de.assertagile.workshop.gebtesting.test.actors.GoogleUserActor
 import de.assertagile.workshop.gebtesting.test.pages.GoogleResultPage
 import de.assertagile.workshop.gebtesting.test.pages.GoogleStartPage
 import geb.spock.GebReportingSpec
 
 class GoogleSystemSpec extends GebReportingSpec {
 
-    def "the Google start page should be reachable"() {
-        when:
-        browser.go(GoogleStartPage.url)
+    GoogleUserActor user = new GoogleUserActor(browser)
 
-        then:
+    def setup() {
+        user.to(GoogleStartPage)
+    }
+
+    def "the Google start page should be reachable"() {
+        expect:
         browser.at(GoogleStartPage)
     }
 
     def "when entering one character the page should chang to the results page"() {
-        given:
-        GoogleStartPage startPage = browser.to(GoogleStartPage)
-
         when:
-        startPage.searchInput = "t"
+        user.searchFor("t")
 
         then:
         browser.at(GoogleResultPage)
     }
 
     def "when entering one character suggestions should be displayed"() {
-        given:
-        GoogleStartPage startPage = browser.to(GoogleStartPage)
-
         when:
-        startPage.searchInput = "t"
+        user.searchFor("t")
 
         then:
-        GoogleResultPage resultPage = browser.at(GoogleResultPage)
-        resultPage.suggestions
+        user.readSuggestions()
 
         and:
-        resultPage.suggestions.every { it.text().startsWith("t") }
+        user.readSuggestions().every { it.text().startsWith("t") }
     }
 
     def "when entering three or more letters results should be displayed"() {
-        given:
-        GoogleStartPage page = browser.to(GoogleStartPage)
-
         when:
-        page.searchInput = "rew"
+        user.searchFor("rew")
 
         then:
-        GoogleResultPage resultPage = browser.at(GoogleResultPage)
-
-        and:
-        resultPage.results
+        user.readResults()
     }
 }
