@@ -6,8 +6,12 @@ please checkout [Spock manual] and/or [Groovy documentation] first ;).
 
 Objectives
 ----------
-- [ ] Open [GoogleSystemSpec] and try to execute it. The test should succeed unless somebody deleted the internet or
-  (more probable) the structure of the Google start page has changed (please file a bug in that case).
+- [ ] Open [GoogleSystemSpec] and try to execute it. The test should succeed unless
+  - Somebody deleted the internet (quite unlikely).
+  - The structure of the Google start page has changed (more likely). Please file a bug in that case.
+  - Your local setup does not work (even more likely). Please check the [GebConfig] file and try `ChromeDriver` instead
+    of `FirefoxDriver`. If it still does not work, please search for help on the exception you see and feel free to
+    file a bug.
 - [ ] Write a simple feature method in [GoogleSystemSpec] that steers the browser to [GoogleStartPage].
   See [Geb manual on browser] and [Geb manual on pages].
 - [ ] Write a feature method in the [GoogleSystemSpec] that verifies the type ahead feature of the Google homepage:
@@ -20,7 +24,6 @@ Helpful Resources and Further Reading
 -------------------------------------
 * [Spock manual]
 * [Geb manual]
-
 
 
 [Groovy]: <http://www.groovy-lang.org/>
@@ -37,3 +40,4 @@ Helpful Resources and Further Reading
 [GoogleSystemSpec]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/GoogleSystemSpec.groovy>
 [GoogleStartPage]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/pages/GoogleStartPage.groovy>
 [GoogleUserActor]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/actors/GoogleUserActor.groovy>
+[GebConfig]: <src/test/resources/GebConfig.groovy>
