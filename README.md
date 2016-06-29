@@ -6,6 +6,12 @@ please checkout [Spock manual] and/or [Groovy documentation] first ;).
 
 Objectives
 ----------
+
+Please checkout the [start branch](https://github.com/mkutz/geb-testing-workshop/tree/01-start) first:
+```bash
+git checkout 01-start
+```
+
 - [X] Open [GoogleSystemSpec] and try to execute it. The test should succeed unless
   - Somebody deleted the internet (quite unlikely).
   - The structure of the Google start page has changed (more likely). Please file a bug in that case.
