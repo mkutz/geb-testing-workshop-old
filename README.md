@@ -6,13 +6,13 @@ please checkout [Spock manual] and/or [Groovy documentation] first ;).
 
 Objectives
 ----------
-- [ ] Open [GoogleSystemSpec] and try to execute it. The test should succeed unless
+- [X] Open [GoogleSystemSpec] and try to execute it. The test should succeed unless
   - Somebody deleted the internet (quite unlikely).
   - The structure of the Google start page has changed (more likely). Please file a bug in that case.
   - Your local setup does not work (even more likely). Please check the [GebConfig] file and try `FirefoxDriver` instead
     of `ChromeDriver`. If it still does not work, please search for help on the exception you see and feel free to file
     a bug.
-- [ ] Add a feature method in the [GoogleSystemSpec] that verifies the type ahead feature of the Google homepage:
+- [X] Add a feature method in the [GoogleSystemSpec] that verifies the type ahead feature of the Google homepage:
   when the user inputs one letter into the query field, the page changes to [GoogleResultsPage].
 - [ ] Write another test the verify that suggestions are offered in a dropdown that are based on the input text.
 - [ ] Try to put the duplicate code from your tests into methods of the [GoogleUserActor].
