@@ -17,7 +17,7 @@ Objectives
 - [X] Write another test the verify that suggestions are offered in a dropdown that are based on the input text.
   You might want to look into [Geb manual on waiting DSL]. There is more than one way to solve this.
 - [X] Add a test that verifies results are shown when entering three or more letters.
-- [ ] Try to put the duplicate code from your tests into methods of the [GoogleUserActor].
+- [X] Try to put the duplicate code from your tests into methods of the [GoogleUserActor].
   For instance write a method, which returns all search results displayed as a list.
 
 Helpful Resources and Further Reading
