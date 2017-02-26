@@ -4,9 +4,21 @@ Just a project I use in exercises about UI testing with [Geb] and [Spock]. The w
 about [Spock] or testing in [Groovy], so if you realize you don't understand the general structure of the test files,
 please checkout [Spock manual] and/or [Groovy documentation] first ;).
 
+Project Setup with Maven
+------------------------
+In order to get [Spock] and [Geb] into our Maven project, we need to do the following in our [pom.xml].
+
+1. Add Groovy as a (test) dependency (see [pom.xml](pom.xml#L27-L32)).
+2. Add Spock dependency (see [pom.xml](pom.xml#L34-L39)).
+3. Add compiler configuration for Groovy since Maven’s default only compiles Java (see [pom.xml](pom.xml#L94-L120)).
+4. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L77)).
+5. Make Maven Surefire plugin aware of files ending with `*Spec` are test class files since Surefire’s default is `*Test` (see [pom.xml](pom.xml#L122-L133)).
+6. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
+7. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
+8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)).
+
 Objectives
 ----------
-
 Please checkout the [start branch](https://github.com/mkutz/geb-testing-workshop/tree/01-start) first:
 ```bash
 git checkout 01-start
@@ -43,6 +55,8 @@ Helpful Resources and Further Reading
 [Geb manual on browser]: <http://www.gebish.org/manual/current/#browser>
 [Geb manual on pages]: <http://www.gebish.org/manual/current/#pages>
 [Geb manual on waiting DSL]: <http://www.gebish.org/manual/current/#content-dsl-wait>
+[WebDriver]: <http://www.seleniumhq.org/projects/webdriver/>
+[WebDriverManager]: <https://github.com/bonigarcia/webdrivermanager>
 
 [GoogleSystemSpec]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/GoogleSystemSpec.groovy>
 [GoogleStartPage]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/pages/GoogleStartPage.groovy>
