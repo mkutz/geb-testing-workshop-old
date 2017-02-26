@@ -15,7 +15,9 @@ In order to get [Spock] and [Geb] into our Maven project, we need to do the foll
 5. Make Maven Surefire plugin aware of files ending with `*Spec` are test class files since Surefire’s default is `*Test` (see [pom.xml](pom.xml#L122-L133)).
 6. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
 7. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
-8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)).
+8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can 
+easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)). It is used in [GebConfig] to download 
+and setup the driver binary (see [GebConfig](src/test/resources/GebConfig.groovy#L28-L35)).
 
 Objectives
 ----------
