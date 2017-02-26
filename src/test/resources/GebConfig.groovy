@@ -16,6 +16,9 @@ reportOnTestFailureOnly = true
 /* clear cookies after each test */
 autoClearCookies = true
 
+/* at checks implicitly wrapped with waitFor */
+atCheckWaiting = true
+
 /* Implicit waiting timings of any element */
 waiting {
     timeout = 2
