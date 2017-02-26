@@ -4,7 +4,7 @@ import org.openqa.selenium.firefox.FirefoxDriver
  * Configuration script for Geb tests. Configuration values might be overwritten using system properties or may be
  * during runtime in Groovy code.
  *
- * See http://www.gebish.org/manual/current/configuration.html for further details.
+ * See http://www.gebish.org/manual/current/#configuration for further details.
  */
 
 /* put a directory to put reports in here (only filled by ReportingSpecs */
