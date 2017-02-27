@@ -2,7 +2,7 @@ Geb Testing Workshop
 ====================
 Just a project I use in exercises about UI testing with [Geb] and [Spock]. The workshop won't go into any detail
 about [Spock] or testing in [Groovy], so if you realize you don't understand the general structure of the test files,
-please checkout [Spock manual] and/or [Groovy documentation] first ;).
+please checkout [Spock manual], the [Groovy documentation] or my [Spock Testing Workshop] first ;).
 
 Project Setup with Maven
 ------------------------
@@ -12,7 +12,8 @@ In order to get [Spock] and [Geb] into our Maven project, we need to do the foll
 2. Add Spock dependency (see [pom.xml](pom.xml#L34-L39)).
 3. Add compiler configuration for Groovy since Maven’s default only compiles Java (see [pom.xml](pom.xml#L94-L120)).
 4. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L77)).
-5. Make Maven Surefire plugin aware of files ending with `*Spec` are test class files since Surefire’s default is `*Test` (see [pom.xml](pom.xml#L122-L133)).
+5. Make Maven Surefire plugin aware of files ending with `*Spec` are test class files since Surefire’s default is 
+`*Test` (see [pom.xml](pom.xml#L122-L133)).
 6. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
 7. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
 8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can 
@@ -51,6 +52,7 @@ Helpful Resources and Further Reading
 
 [Spock]: <https://github.com/spockframework/spock>
 [Spock manual]: <http://docs.spockframework.org/>
+[Spock Testing Workshop]: <https://github.com/mkutz/spock-testing-workshop>
 
 [Geb]: <http://www.gebish.org/>
 [Geb manual]: <http://www.gebish.org/manual/current/>
