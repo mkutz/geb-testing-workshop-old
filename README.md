@@ -42,21 +42,17 @@ So lets check if everything works fine first:
 
 Part 2: The Browser
 -------------------
-TODO
+First we'll use the Browser instance provided by `GebSpec` to navigate to the main Google page.
 
 - [ ] Add a new feature method to [GoogleSystemSpec], that checks if the Google logo can be found on the Google start
 page.
 - [ ] Write another one to check if the main search input field can be found.
 
-Part 3: Interaction
--------------------
-TODO
-
-- [ ] Add a feature to check if the footer link to the "about Google" page is actually taking us to a different page.
-
-Part 4: Pages
+Part 3: Pages
 -------------
-TODO
+If you did not refactor your test code, you now have at least one duplicate line of code for navigating to the Google
+page. Also you have put some knowledge about the page structure into your test, which will probably keep being 
+duplicated: the selector for the main search input.
 
 - [ ] Create a `GoogleStartPage` class containing the URL. Now change your features to use the `to` instead of `go` for
 navigating to the page.
@@ -87,27 +83,6 @@ TODO
 - [ ] Add a feature to your [GoogleSystemSpec] to check that when searching for "Wiki" then the top result is 
 "Wikipedia".
 
-Objectives
-----------
-Please checkout the [start branch](https://github.com/mkutz/geb-testing-workshop/tree/01-start) first:
-```bash
-git checkout 01-start
-```
-
-- [X] Open [GoogleSystemSpec] and try to execute it. The test should succeed unless
-  - Somebody deleted the internet (quite unlikely).
-  - The structure of the Google start page has changed (more likely). Please file a bug in that case.
-  - Your local setup does not work (even more likely). Please check the [GebConfig] file and try `FirefoxDriver` instead
-    of `ChromeDriver`. If it still does not work, please search for help on the exception you see and feel free to file
-    a bug.
-- [X] Add a feature method in the [GoogleSystemSpec] that verifies the type ahead feature of the Google homepage:
-  when the user inputs one letter into the query field, the page changes to [GoogleResultsPage].
-- [X] Write another test the verify that suggestions are offered in a dropdown that are based on the input text.
-  You might want to look into [Geb manual on waiting DSL]. There is more than one way to solve this.
-- [X] Add a test that verifies results are shown when entering three or more letters.
-- [X] Try to put the duplicate code from your tests into methods of the [GoogleUserActor].
-  For instance write a method, which returns all search results displayed as a list.
-
 Helpful Resources and Further Reading
 -------------------------------------
 * [Spock manual]
@@ -124,8 +99,8 @@ Helpful Resources and Further Reading
 [Geb]: <http://www.gebish.org/>
 [Geb manual]: <http://www.gebish.org/manual/current/>
 [Introduction section]: <http://www.gebish.org/manual/current/#introduction>
-[The Browser section]: <http://www.gebish.org/manual/current/#browser>
-[The WebDriver implementation section]: <http://www.gebish.org/manual/current/#driver>
+[Browser section]: <http://www.gebish.org/manual/current/#browser>
+[WebDriver implementation section]: <http://www.gebish.org/manual/current/#driver>
 [Interacting with content section]: <http://www.gebish.org/manual/current/#navigator>
 [Pages section]: <http://www.gebish.org/manual/current/#pages>
 [Modules section]: <http://www.gebish.org/manual/current/#modules>
