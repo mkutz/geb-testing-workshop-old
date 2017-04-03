@@ -1,6 +1,6 @@
 Geb Testing Workshop (WORK IN PROGRESS)
 ====================
-Just a project I use in exercises about UI testing with [Geb] and [Spock]. The workshop won't go into any detail
+Workshop for UI testing with [Geb] and [Spock]. The workshop won't go into any detail
 about [Spock] or testing in [Groovy], so if you realize you don't understand the general structure of the test files,
 please checkout [Spock manual], the [Groovy documentation] or my [Spock Testing Workshop] first ;).
 
