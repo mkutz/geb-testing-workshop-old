@@ -11,19 +11,19 @@ class GoogleUserActor {
     @Delegate
     final Browser browser
 
-    public GoogleUserActor(final Browser browser) {
+    GoogleUserActor(final Browser browser) {
         this.browser = browser
     }
 
-    public void searchFor(String query) {
+    void searchFor(String query) {
         at(GoogleStartPage).searchInput = query
     }
 
-    public List<SuggestionModule> readSuggestions() {
+    List<SuggestionModule> readSuggestions() {
         at(GoogleResultPage).suggestions
     }
 
-    public List<ResultModule> readResults() {
+    List<ResultModule> readResults() {
         at(GoogleResultPage).results
     }
 }
