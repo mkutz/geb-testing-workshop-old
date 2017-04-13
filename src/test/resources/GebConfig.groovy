@@ -1,5 +1,10 @@
+import io.github.bonigarcia.wdm.ChromeDriverManager
 import io.github.bonigarcia.wdm.FirefoxDriverManager
+import io.github.bonigarcia.wdm.PhantomJsDriverManager
+import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.phantomjs.PhantomJSDriver
+
 /*
  * Configuration script for Geb tests. Configuration values might be overwritten using system properties or may be
  * during runtime in Groovy code.
@@ -25,11 +30,12 @@ waiting {
     retryInterval = 0.1
 }
 
-driver = {
-    /*
-     * using WebDriverManager
-     * see https://github.com/bonigarcia/webdrivermanager
-     */
-    FirefoxDriverManager.getInstance().setup()
-    new FirefoxDriver()
-}
+/*
+ * using WebDriverManager
+ * see https://github.com/bonigarcia/webdrivermanager
+ */
+phantomJs = { PhantomJsDriverManager.instance.setup(); return new PhantomJSDriver() }
+chrome = { ChromeDriverManager.instance.setup(); return new ChromeDriver() }
+firefox = { FirefoxDriverManager.instance.setup(); return new FirefoxDriver() }
+
+driver = chrome
