@@ -37,9 +37,9 @@ class GoogleSystemSpec extends GebReportingSpec {
         user.readSuggestions().every { it.text().startsWith("t") }
     }
 
-    def "when entering three or more letters results should be displayed"() {
+    def "when entering enough letters results should be displayed"() {
         when:
-        user.searchFor("rew")
+        user.searchFor("rewe.")
 
         then:
         user.readResults()
