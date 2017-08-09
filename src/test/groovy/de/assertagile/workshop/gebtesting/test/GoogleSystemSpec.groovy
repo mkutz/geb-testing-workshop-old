@@ -34,7 +34,7 @@ class GoogleSystemSpec extends GebReportingSpec {
         user.readSuggestions()
 
         and:
-        user.readSuggestions().every { it.text().startsWith("t") }
+        user.readSuggestions()*.text().every { it.startsWith("t") }
     }
 
     def "when entering enough letters results should be displayed"() {
