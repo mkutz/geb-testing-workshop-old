@@ -1,5 +1,8 @@
 Geb Testing Workshop (WORK IN PROGRESS)
 ====================
+
+[![Build Status](https://travis-ci.org/mkutz/geb-testing-workshop.svg?branch=master)](https://travis-ci.org/mkutz/geb-testing-workshop)
+
 Workshop for UI testing with [Geb] and [Spock]. The workshop won't go into any detail
 about [Spock] or testing in [Groovy], so if you realize you don't understand the general structure of the test files,
 please checkout [Spock manual], the [Groovy documentation] or my [Spock Testing Workshop] first ;).
@@ -12,12 +15,12 @@ In order to get [Spock] and [Geb] into our Maven project, we need to do the foll
 2. Add Spock dependency (see [pom.xml](pom.xml#L34-L39)).
 3. Add compiler configuration for Groovy since Maven’s default only compiles Java (see [pom.xml](pom.xml#L94-L120)).
 4. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L77)).
-5. Make Maven Surefire plugin aware of files ending with `*Spec` are test class files since Surefire’s default is 
+5. Make Maven Surefire plugin aware of files ending with `*Spec` are test class files since Surefire’s default is
 `*Test` (see [pom.xml](pom.xml#L122-L133)).
 6. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
 7. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
-8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can 
-easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)). It is used in [GebConfig] to download 
+8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can
+easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)). It is used in [GebConfig] to download
 and setup the driver binary (see [GebConfig](src/test/resources/GebConfig.groovy#L28-L35)).
 
 Part 1: Engine Check
@@ -30,13 +33,13 @@ So lets check if everything works fine first:
 - [ ] Open [GoogleSystemSpec] and execute it via your IDE.
   If this did not work for you, please check the following things:
   - Can you (manually) reach the Google start page? If not, please check your internet connection.
-  - Did your IDE understand the project structure? Is it fit for [Groovy]? It should generally work out of the box 
+  - Did your IDE understand the project structure? Is it fit for [Groovy]? It should generally work out of the box
   for [IntelliJ Idea](https://www.jetbrains.com/idea/download/).
-  - If your browser just starts and then does nothing, you probably need a new version of Selenium. So change the 
-  version in the [pom.xml](pom.xml#L62-L67). Notice that you probably will also need a new version of 
-  [WebDriverManager] (see [pom.xml](pom.xml#L69-L73)). You can also try to configure a different browser in the 
+  - If your browser just starts and then does nothing, you probably need a new version of Selenium. So change the
+  version in the [pom.xml](pom.xml#L62-L67). Notice that you probably will also need a new version of
+  [WebDriverManager] (see [pom.xml](pom.xml#L69-L73)). You can also try to configure a different browser in the
   [GebConfig].
-  - If the test fails but generally executes, the structure of the Google start page might have changed and the test 
+  - If the test fails but generally executes, the structure of the Google start page might have changed and the test
   needs adjustments. Please check for [issues] and feel free to raise a new one.
   - In any other case, please raise an [issue][issues].
 
@@ -51,7 +54,7 @@ page.
 Part 3: Pages
 -------------
 If you did not refactor your test code, you now have at least one duplicate line of code for navigating to the Google
-page. Also you have put some knowledge about the page structure into your test, which will probably keep being 
+page. Also you have put some knowledge about the page structure into your test, which will probably keep being
 duplicated: the selector for the main search input.
 
 - [ ] Create a `GoogleStartPage` class containing the URL. Now change your features to use the `to` instead of `go` for
@@ -65,7 +68,7 @@ Part 4: More interaction and waiting
 TODO
 
 - [ ] Add a new feature method to [GoogleSystemSpec], which inputs one character into the main search input field.
-As you might know, the page will change quite significantly. E.g. the logo disappears and a smaller version appears. 
+As you might know, the page will change quite significantly. E.g. the logo disappears and a smaller version appears.
 Make your feature method check for that change.
 
 Part 5: Configuration
@@ -80,7 +83,7 @@ TODO
 
 - [ ] Create a `ResultModule` allows to access search result's title and URL.
 - [ ] Add a list of `ResultModule`s to your `GoogleResultsPage`.
-- [ ] Add a feature to your [GoogleSystemSpec] to check that when searching for "Wiki" then the top result is 
+- [ ] Add a feature to your [GoogleSystemSpec] to check that when searching for "Wiki" then the top result is
 "Wikipedia".
 
 Helpful Resources and Further Reading
