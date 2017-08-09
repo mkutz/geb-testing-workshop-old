@@ -15,7 +15,7 @@ In order to get [Spock] and [Geb] into our Maven project, we need to do the foll
 2. Add Spock dependency (see [pom.xml](pom.xml#L34-L39)).
 3. Add compiler configuration for Groovy since Maven’s default only compiles Java (see [pom.xml](pom.xml#L94-L120)).
 4. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L77)).
-5. Make Maven Surefire plugin aware of files ending with `*Spec` are test class files since Surefire’s default is
+5. Make Maven Failsafe plugin aware of files ending with `*Spec` are test class files since its default is
 `*Test` (see [pom.xml](pom.xml#L122-L133)).
 6. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
 7. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
