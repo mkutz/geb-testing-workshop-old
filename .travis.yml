@@ -3,4 +3,4 @@ language: groovy
 script:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - mvn test -B
-  - mvn verfiy -B -D geb.env=travis
+  - mvn verify -B -D geb.env=travis
