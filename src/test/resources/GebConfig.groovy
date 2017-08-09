@@ -39,3 +39,9 @@ chrome = { ChromeDriverManager.instance.setup(); return new ChromeDriver() }
 firefox = { FirefoxDriverManager.instance.setup(); return new FirefoxDriver() }
 
 driver = chrome
+
+environments {
+    travis {
+        driver = phantomJs
+    }
+}
