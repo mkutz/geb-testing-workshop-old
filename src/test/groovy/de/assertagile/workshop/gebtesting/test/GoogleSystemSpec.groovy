@@ -37,9 +37,12 @@ class GoogleSystemSpec extends GebReportingSpec {
         user.readSuggestions()*.text().every { it.startsWith("t") }
     }
 
-    def "when entering enough letters results should be displayed"() {
+    def "pressing enter should display the results page"() {
         when:
         user.searchFor("rewe.")
+
+        and:
+        user.submitSearch()
 
         then:
         user.readResults()

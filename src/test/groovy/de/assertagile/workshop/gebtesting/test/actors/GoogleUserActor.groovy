@@ -5,6 +5,7 @@ import de.assertagile.workshop.gebtesting.test.pages.GoogleStartPage
 import de.assertagile.workshop.gebtesting.test.pages.ResultModule
 import de.assertagile.workshop.gebtesting.test.pages.SuggestionModule
 import geb.Browser
+import org.openqa.selenium.Keys
 
 class GoogleUserActor {
 
@@ -17,6 +18,10 @@ class GoogleUserActor {
 
     void searchFor(String query) {
         at(GoogleStartPage).searchInput = query
+    }
+
+    void submitSearch() {
+        at(GoogleStartPage).searchInput << Keys.ENTER
     }
 
     List<SuggestionModule> readSuggestions() {
