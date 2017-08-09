@@ -16,7 +16,7 @@ In order to get [Spock] and [Geb] into our Maven project, we need to do the foll
 3. Add compiler configuration for Groovy since Maven’s default only compiles Java (see [pom.xml](pom.xml#L94-L120)).
 4. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L77)).
 5. Make Maven Failsafe plugin aware of files ending with `*Spec` are test class files since its default is
-`*Test` (see [pom.xml](pom.xml#L122-L133)).
+`*IT` (see [pom.xml](pom.xml#L122-L133)).
 6. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
 7. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
 8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can
@@ -30,7 +30,7 @@ using [Geb], which relies on [WebDriver] to automate a browser that you have ins
 or may not be of the latest version for your system).
 
 So lets check if everything works fine first:
-- [ ] Open [GoogleSystemSpec] and execute it via your IDE.
+- [ ] Open [GoogleUiSpec] and execute it via your IDE.
   If this did not work for you, please check the following things:
   - Can you (manually) reach the Google start page? If not, please check your internet connection.
   - Did your IDE understand the project structure? Is it fit for [Groovy]? It should generally work out of the box
@@ -47,7 +47,7 @@ Part 2: The Browser
 -------------------
 First we'll use the Browser instance provided by `GebSpec` to navigate to the main Google page.
 
-- [ ] Add a new feature method to [GoogleSystemSpec], that checks if the Google logo can be found on the Google start
+- [ ] Add a new feature method to [GoogleUiSpec], that checks if the Google logo can be found on the Google start
 page.
 - [ ] Write another one to check if the main search input field can be found.
 
@@ -67,7 +67,7 @@ Part 4: More interaction and waiting
 ------------------------------------
 TODO
 
-- [ ] Add a new feature method to [GoogleSystemSpec], which inputs one character into the main search input field.
+- [ ] Add a new feature method to [GoogleUiSpec], which inputs one character into the main search input field.
 As you might know, the page will change quite significantly. E.g. the logo disappears and a smaller version appears.
 Make your feature method check for that change.
 
@@ -83,7 +83,7 @@ TODO
 
 - [ ] Create a `ResultModule` allows to access search result's title and URL.
 - [ ] Add a list of `ResultModule`s to your `GoogleResultsPage`.
-- [ ] Add a feature to your [GoogleSystemSpec] to check that when searching for "Wiki" then the top result is
+- [ ] Add a feature to your [GoogleUiSpec] to check that when searching for "Wiki" then the top result is
 "Wikipedia".
 
 Helpful Resources and Further Reading
@@ -116,7 +116,7 @@ Helpful Resources and Further Reading
 [WebDriver]: <http://www.seleniumhq.org/projects/webdriver/>
 [WebDriverManager]: <https://github.com/bonigarcia/webdrivermanager>
 
-[GoogleSystemSpec]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/GoogleSystemSpec.groovy>
+[GoogleUiSpec]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/GoogleUiSpec.groovy>
 [GoogleStartPage]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/pages/GoogleStartPage.groovy>
 [GoogleUserActor]: <src/test/groovy/de/assertagile/workshop/gebtesting/test/actors/GoogleUserActor.groovy>
 [GebConfig]: <src/test/resources/GebConfig.groovy>

@@ -126,10 +126,18 @@
                 <version>2.20</version>
                 <configuration>
                     <includes>
-                        <include>**/*Test.*</include>
-                        <include>**/*Spec.*</include>
+                        <include>**/*UiSpec.*</include>
                     </includes>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>execute-ui-tests</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

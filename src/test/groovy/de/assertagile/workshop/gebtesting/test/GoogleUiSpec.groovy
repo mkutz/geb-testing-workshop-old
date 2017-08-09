@@ -5,7 +5,7 @@ import de.assertagile.workshop.gebtesting.test.pages.GoogleResultPage
 import de.assertagile.workshop.gebtesting.test.pages.GoogleStartPage
 import geb.spock.GebReportingSpec
 
-class GoogleSystemSpec extends GebReportingSpec {
+class GoogleUiSpec extends GebReportingSpec {
 
     GoogleUserActor user = new GoogleUserActor(browser)
 
