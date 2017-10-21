@@ -1,6 +1,10 @@
 language: groovy
 
-script:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-  - mvn test -B
-  - mvn verify -B -D geb.env=travis
+jobs:
+  include:
+    - stage: build
+      script: mvn package -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+    - stage: class-test
+      script: mvn test -B
+    - stage: system-test
+      script: mvn verify -B -D geb.env=travis
