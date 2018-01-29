@@ -1,5 +1,8 @@
 language: groovy
 
+addons:
+  chrome: stable
+
 jobs:
   include:
     - stage: build
