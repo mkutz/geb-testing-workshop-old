@@ -3,6 +3,7 @@ import io.github.bonigarcia.wdm.FirefoxDriverManager
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.firefox.FirefoxOptions
 
 /*
  * Configuration script for Geb tests. Configuration values might be overwritten using system properties or may be
@@ -15,7 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver
 reportsDir = "target/geb-reports"
 
 /* only report if test failed */
-reportOnTestFailureOnly = true
+reportOnTestFailureOnly = false
 
 /* clear cookies after each test */
 autoClearCookies = true
@@ -45,11 +46,15 @@ firefox = {
     FirefoxDriverManager.instance.setup()
     return new FirefoxDriver()
 }
+firefoxHeadless = {
+    FirefoxDriverManager.instance.setup()
+    return new FirefoxDriver(new FirefoxOptions().addArguments("-headless"))
+}
 
-driver = chromeHeadless
+driver = chrome
 
 environments {
     travis {
-        driver = chromeHeadless
+        driver = firefoxHeadless
     }
 }
