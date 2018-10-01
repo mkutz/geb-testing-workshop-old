@@ -12,16 +12,13 @@ Project Setup with Maven
 In order to get [Spock] and [Geb] into our Maven project, we need to do the following in our [pom.xml].
 
 1. Add Groovy as a (test) dependency (see [pom.xml](pom.xml#L27-L32)).
-2. Add Spock dependency (see [pom.xml](pom.xml#L34-L39)).
-3. Add compiler configuration for Groovy since Maven’s default only compiles Java (see [pom.xml](pom.xml#L94-L120)).
-4. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L77)).
-5. Make Maven Failsafe plugin aware of files ending with `*Spec` are test class files since its default is
-`*IT` (see [pom.xml](pom.xml#L122-L133)).
+2. Add Spock dependency (see [pom.xml](pom.xml#L35-L40)).
+3. Add [GMavenPlus] to compile Groovy sources, since Maven’s default settings only compile Java (see [pom.xml](pom.xml#L82-L105)).
+4. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L79)).
+5. Make Maven Failsafe plugin aware of files ending with `*UiSpec` are test class files since its default is `*IT` and execute it during integration-test phase (see [pom.xml](pom.xml#L107-L125)).
 6. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
 7. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
-8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can
-easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)). It is used in [GebConfig] to download
-and setup the driver binary (see [GebConfig](src/test/resources/GebConfig.groovy#L28-L35)).
+8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)). It is used in [GebConfig] to download and setup the driver binary (see [GebConfig](src/test/resources/GebConfig.groovy#L28-L35)).
 
 Part 1: Engine Check
 --------------------
@@ -94,6 +91,7 @@ Helpful Resources and Further Reading
 
 [Groovy]: <http://www.groovy-lang.org/>
 [Groovy documentation]: <http://www.groovy-lang.org/documentation.html>
+[Groovy Maven integration]: <http://docs.groovy-lang.org/latest/html/documentation/tools-groovyc.html#_maven_integration>
 
 [Spock]: <https://github.com/spockframework/spock>
 [Spock manual]: <http://docs.spockframework.org/>
@@ -112,6 +110,8 @@ Helpful Resources and Further Reading
 [Spock, JUnit & TestNG section]: <http://www.gebish.org/manual/current/#spock-junit-testng>
 [Javascript, AJAX and dynamic pages seaction]: <http://www.gebish.org/manual/current/#javascript-ajax-and-dynamic-pages>
 [Waiting section]: <http://www.gebish.org/manual/current/#waiting>
+
+[GMavenPlus]: <http://groovy.github.io/GMavenPlus/>
 
 [WebDriver]: <http://www.seleniumhq.org/projects/webdriver/>
 [WebDriverManager]: <https://github.com/bonigarcia/webdrivermanager>
