@@ -1,5 +1,4 @@
-import io.github.bonigarcia.wdm.ChromeDriverManager
-import io.github.bonigarcia.wdm.FirefoxDriverManager
+import io.github.bonigarcia.wdm.WebDriverManager
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
@@ -35,19 +34,19 @@ waiting {
  * see https://github.com/bonigarcia/webdrivermanager
  */
 chrome = {
-    ChromeDriverManager.instance.setup()
+    WebDriverManager.chromedriver().setup()
     return new ChromeDriver()
 }
 chromeHeadless = {
-    ChromeDriverManager.instance.setup()
+    WebDriverManager.chromedriver().setup()
     return new ChromeDriver(new ChromeOptions().addArguments("headless", "disable-gpu"))
 }
 firefox = {
-    FirefoxDriverManager.instance.setup()
+    WebDriverManager.firefoxdriver().setup()
     return new FirefoxDriver()
 }
 firefoxHeadless = {
-    FirefoxDriverManager.instance.setup()
+    WebDriverManager.firefoxdriver().setup()
     return new FirefoxDriver(new FirefoxOptions().addArguments("-headless"))
 }
 

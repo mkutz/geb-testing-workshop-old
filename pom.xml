@@ -13,7 +13,7 @@
 
 
     <prerequisites>
-        <maven>3.0</maven>
+        <maven>3.0.5</maven>
     </prerequisites>
 
     <properties>
@@ -27,21 +27,22 @@
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>2.4.13</version>
+            <version>2.5.2</version>
             <scope>test</scope>
+            <type>pom</type>
         </dependency>
 
         <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
-            <version>1.1-groovy-2.4</version>
+            <version>1.2-groovy-2.5</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.gebish</groupId>
             <artifactId>geb-spock</artifactId>
-            <version>2.1</version>
+            <version>2.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -62,54 +63,51 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.11.0</version>
+            <version>3.14.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>2.2.0</version>
+            <version>3.0.0</version>
         </dependency>
     </dependencies>
+
 
     <build>
         <testSourceDirectory>src/test/groovy</testSourceDirectory>
 
         <plugins>
-            <!-- Configure the compiler plugin for Groovy
-                 see https://github.com/groovy/groovy-eclipse/wiki/Groovy-Eclipse-Maven-plugin -->
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <version>1.6.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>addSources</goal>
+                            <goal>addTestSources</goal>
+                            <goal>generateStubs</goal>
+                            <goal>compile</goal>
+                            <goal>generateTestStubs</goal>
+                            <goal>compileTests</goal>
+                            <goal>removeStubs</goal>
+                            <goal>removeTestStubs</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <compilerId>groovy-eclipse-compiler</compilerId>
-                    <verbose>false</verbose>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-compiler</artifactId>
-                        <version>2.9.2-01</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.codehaus.groovy</groupId>
-                        <artifactId>groovy-eclipse-batch</artifactId>
-                        <version>2.4.3-01</version>
-                    </dependency>
-                </dependencies>
+                <version>3.8.0</version>
             </plugin>
 
-            <!-- Spock tests end with "Spec" -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.21.0</version>
+                <version>2.22.0</version>
                 <configuration>
                     <includes>
                         <include>**/*UiSpec.*</include>
