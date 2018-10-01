@@ -9,6 +9,8 @@ please checkout [Spock manual], the [Groovy documentation] or my [Spock Testing 
 
 Project Setup with Maven
 ------------------------
+There are several options to get Groovy code compiled in Maven. See the Groovy documentation on [Groovy Maven integration] for an overview.
+
 In order to get [Spock] and [Geb] into our Maven project, we need to do the following in our [pom.xml].
 
 1. Add Groovy as a (test) dependency (see [pom.xml](pom.xml#L27-L32)).
