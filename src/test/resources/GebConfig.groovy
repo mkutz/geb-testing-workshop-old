@@ -54,6 +54,6 @@ driver = chrome
 
 environments {
     travis {
-        driver = firefoxHeadless
+        driver = chromeHeadless
     }
 }
