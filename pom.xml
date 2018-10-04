@@ -29,7 +29,6 @@
             <artifactId>groovy-all</artifactId>
             <version>2.4.15</version>
             <scope>test</scope>
-            <type>pom</type>
         </dependency>
 
         <dependency>
