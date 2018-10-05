@@ -61,6 +61,6 @@ driver = chrome
 
 environments {
     travis {
-        driver = chromeDocker
+        driver = firefoxDocker
     }
 }
