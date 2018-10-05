@@ -11,10 +11,7 @@ class GoogleUiSpec extends GebSpec {
     }
 
     def "the main search input field can be found"() {
-        when:
-        to(GoogleStartPage)
-
-        then:
-        $("#lst-ib")
+        expect:
+        to(GoogleStartPage).searchInput
     }
 }

@@ -7,4 +7,8 @@ class GoogleStartPage extends Page {
     static url = "https://google.com"
 
     static at = { $("#hplogo") }
+
+    static content = {
+        searchInput { $("#lst-ib") }
+    }
 }
