@@ -12,24 +12,6 @@ import org.openqa.selenium.remote.RemoteWebDriver
  * See http://www.gebish.org/manual/current/#configuration for further details.
  */
 
-/* put a directory to put reports in here (only filled by GebReportingSpecs */
-reportsDir = "target/geb-reports"
-
-/* only report if test failed */
-reportOnTestFailureOnly = false
-
-/* clear cookies after each test */
-autoClearCookies = true
-
-/* at checks implicitly wrapped with waitFor */
-atCheckWaiting = true
-
-/* Implicit waiting timings of any element */
-waiting {
-    timeout = 2
-    retryInterval = 0.1
-}
-
 /*
  * using WebDriverManager
  * see https://github.com/bonigarcia/webdrivermanager

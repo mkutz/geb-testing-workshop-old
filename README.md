@@ -52,38 +52,39 @@ First we'll use the Browser instance provided by `GebReportingSpec` to navigate 
 
 Part 2: Pages
 -------------
-If you did not refactor your test code, you now have at least one duplicate line of code for navigating to the Google
-page. Also you have put some knowledge about the page structure into your test, which will probably keep being
-duplicated: the selector for the main search input.
+If you did not refactor your test code, you now have at least one duplicate line of code for navigating to the Google page. Also you have put some knowledge about the page structure into your test, which will probably keep being duplicated: the selector for the main search input.
 
-- [ ] Create a `GoogleStartPage` class containing the URL. Now change your features to use the `to` instead of `go` for
-navigating to the page.
+- [ ] Create a `GoogleStartPage` class containing the URL. Now change your features to use the `to` instead of `go` for navigating to the page.
 - [ ] Add an `at` check to your page. Use your selector for the bigger Google logo for this.
 - [ ] Move your selector for the main search input field to the page's content.
 - [ ] Refactor your features to use the `GoogleStartPage` and contain no more knowledge about the HTML structure.
 
 Part 3: More interaction and waiting
 ------------------------------------
-TODO
+Web pages often contain dynamic elements these days. While these may appear immediately to your eye, they actually appear at an undefined time (e.g. not after the browser regards the page as loaded).
 
-- [ ] Add a new feature method to [GoogleUiSpec], which inputs one character into the main search input field.
-As you might know, the page will change quite significantly. E.g. the logo disappears and a smaller version appears.
-Make your feature method check for that change.
+- [ ] Add a new feature method, which checks if "search suggestions are shown on typing once character".\
+  Note that the suggestions appear quite fast but not immediately. You might need to `waitFor` it.
+- [ ] Write a feature method to verify that "the search input content is changed to a suggestion selected by down key"
+- [ ] Write another feature method to check that "clicking on a suggestion opens the result page for the suggestion". Create a `GoogleResultsPage` with an `at` check for this test.
 
 Part 4: Configuration
 ---------------------
-TODO baseUrl, waiting, atCheckWaiting, reporting
+Let's explore the possibilities of the [GebConfig] file.
 
 - [ ] Configure the `baseUrl` in the [GebConfig] script and change your `GoogleStartPage` to rely on that.
+- [ ] Configure a `reportsDir` to get reports for each test.
+- [ ] Make Geb only create a report for failed tests.
 
 Part 5: Modules
 ---------------
-TODO
+Web application often contain an element multiple times. E.g. quite many pages contain elements (text fields, checkboxes, radio buttons, buttons). [Geb] `Modules` describing the structure of those elements and hold possible interactions with them. It also allows to create your own `Module` classes. 
 
-- [ ] Create a `ResultModule` allows to access search result's title and URL.
-- [ ] Add a list of `ResultModule`s to your `GoogleResultsPage`.
-- [ ] Add a feature to your [GoogleUiSpec] to check that when searching for "Wiki" then the top result is
-"Wikipedia".
+- [ ] Use a `TextInput` module for the search input field.
+- [ ] Create a `ResultModule` allows to access search result's title and URL. Add a list of `ResultModule`s to your `GoogleResultsPage`.
+- [ ] Add a feature to your [GoogleUiSpec] to check that "when searching for 'Wiki', the top result is
+'Wikipedia'".
+- [ ] Create a `SuggestionModule`, which allows to get the text actually typed and the supplement assumed by Google. Write a test verifying that "all suggestions start with the user typed text"
 
 Helpful Resources and Further Reading
 -------------------------------------
@@ -101,6 +102,9 @@ Helpful Resources and Further Reading
 
 [Geb]: <http://www.gebish.org/>
 [Geb manual]: <http://www.gebish.org/manual/current/>
+[Geb manual interacting with content section]: <http://gebish.org/manual/current/#navigator>
+[Geb manual pages section]: <http://gebish.org/manual/current/#pages>
+[Geb manual modules section]: <http://gebish.org/manual/current/#modules>
 [Geb manual config section]: <http://www.gebish.org/manual/current/#configuration>
 [Introduction section]: <http://www.gebish.org/manual/current/#introduction>
 [Browser section]: <http://www.gebish.org/manual/current/#browser>
