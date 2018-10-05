@@ -6,11 +6,8 @@ import geb.spock.GebSpec
 class GoogleUiSpec extends GebSpec {
 
     def "the Google logo can be found on the Google start page"() {
-        when:
+        expect:
         to(GoogleStartPage)
-
-        then:
-        $("#hplogo")
     }
 
     def "the main search input field can be found"() {
