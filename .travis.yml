@@ -1,11 +1,13 @@
 language: groovy
 
-addons:
-  chrome: stable
-  firefox: latest
+services:
+  - docker
 
 before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - docker network create grid
+  - docker run -d -p 4444:4444 --net grid --name selenium-hub selenium/hub:latest
+  - docker run -d --net grid -e HUB_HOST=selenium-hub -v /dev/shm:/dev/shm --name selenium-node-chrome selenium/node-chrome:latest
+  - docker run -d --net grid -e HUB_HOST=selenium-hub -v /dev/shm:/dev/shm --name selenium-node-firefox selenium/node-firefox:latest
 
 jobs:
   include:
@@ -15,3 +17,7 @@ jobs:
       script: mvn test -B
     - stage: system-test
       script: mvn verify -B -D geb.env=travis
+
+after_script:
+  - docker stop selenium-node-firefox selenium-node-chrome selenium-hub
+  - docker network rm grid
