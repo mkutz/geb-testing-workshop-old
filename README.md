@@ -3,9 +3,7 @@ Geb Testing Workshop (WORK IN PROGRESS)
 
 [![Build Status](https://travis-ci.org/mkutz/geb-testing-workshop.svg?branch=master)](https://travis-ci.org/mkutz/geb-testing-workshop)
 
-Workshop for UI testing with [Geb] and [Spock]. The workshop won't go into any detail
-about [Spock] or testing in [Groovy], so if you realize you don't understand the general structure of the test files,
-please checkout [Spock manual], the [Groovy documentation] or my [Spock Testing Workshop] first ;).
+Workshop for UI testing with [Geb] and [Spock]. The workshop won't go into any detail about [Spock] or testing in [Groovy], so if you realize you don't understand the general structure of the test files, please checkout [Spock manual], the [Groovy documentation] or my [Spock Testing Workshop] first ;).
 
 Project Setup with Maven
 ------------------------
@@ -22,14 +20,18 @@ In order to get [Spock] and [Geb] into our Maven project, we need to do the foll
 7. Add [GMavenPlus] to compile Groovy sources, since Maven’s default settings only compile Java (see [pom.xml](pom.xml#L81-L105)).
 8. Make Maven Failsafe plugin aware of files ending with `*UiSpec` are test class files since its default is `*IT` and execute it during integration-test phase (see [pom.xml](pom.xml#L107-L125)).
 
-Part 1: Engine Check
---------------------
+Geb Configuration
+-----------------
+This project already contains a [GebConfig.groovy] file. If you'd like to adjust the configuration for your own projects, please refer the the [Geb manual config section]. 
+
+Engine Check
+------------
 In general this project should work just fine. However, we are dealing with quite a stack of technology here: you are
 using [Geb], which relies on [WebDriver] to automate a browser that you have installed on your system (and which may
 or may not be of the latest version for your system).
 
 So lets check if everything works fine first:
-- [ ] Open [GoogleUiSpec] and execute it via your IDE.
+- Open [GoogleUiSpec] and execute it via your IDE.
   If this did not work for you, please check the following things:
   - Can you (manually) reach the Google start page? If not, please check your internet connection.
   - Did your IDE understand the project structure? Is it fit for [Groovy]? It should generally work out of the box
@@ -42,15 +44,14 @@ So lets check if everything works fine first:
   needs adjustments. Please check for [issues] and feel free to raise a new one.
   - In any other case, please raise an [issue][issues].
 
-Part 2: The Browser
+Part 1: The Browser
 -------------------
-First we'll use the Browser instance provided by `GebSpec` to navigate to the main Google page.
+First we'll use the Browser instance provided by `GebReportingSpec` to navigate to the main Google page at `http://google.com`.
 
-- [ ] Add a new feature method to [GoogleUiSpec], that checks if the Google logo can be found on the Google start
-page.
-- [ ] Write another one to check if the main search input field can be found.
+- [ ] Add a new feature method to [GoogleUiSpec], that checks if "the Google logo can be found on the Google start page".
+- [ ] Write another one to check if "the main search input field can be found".
 
-Part 3: Pages
+Part 2: Pages
 -------------
 If you did not refactor your test code, you now have at least one duplicate line of code for navigating to the Google
 page. Also you have put some knowledge about the page structure into your test, which will probably keep being
@@ -62,7 +63,7 @@ navigating to the page.
 - [ ] Move your selector for the main search input field to the page's content.
 - [ ] Refactor your features to use the `GoogleStartPage` and contain no more knowledge about the HTML structure.
 
-Part 4: More interaction and waiting
+Part 3: More interaction and waiting
 ------------------------------------
 TODO
 
@@ -70,7 +71,7 @@ TODO
 As you might know, the page will change quite significantly. E.g. the logo disappears and a smaller version appears.
 Make your feature method check for that change.
 
-Part 5: Configuration
+Part 4: Configuration
 ---------------------
 TODO baseUrl, waiting, atCheckWaiting, reporting
 
@@ -101,6 +102,7 @@ Helpful Resources and Further Reading
 
 [Geb]: <http://www.gebish.org/>
 [Geb manual]: <http://www.gebish.org/manual/current/>
+[Geb manual config section]: <http://www.gebish.org/manual/current/#configuration>
 [Introduction section]: <http://www.gebish.org/manual/current/#introduction>
 [Browser section]: <http://www.gebish.org/manual/current/#browser>
 [WebDriver implementation section]: <http://www.gebish.org/manual/current/#driver>

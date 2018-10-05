@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.RemoteWebDriver
  * See http://www.gebish.org/manual/current/#configuration for further details.
  */
 
-/* put a directory to put reports in here (only filled by ReportingSpecs */
+/* put a directory to put reports in here (only filled by GebReportingSpecs */
 reportsDir = "target/geb-reports"
 
 /* only report if test failed */
