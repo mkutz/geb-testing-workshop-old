@@ -1,5 +1,6 @@
 package de.assertagile.workshop.gebtesting.test
 
+import de.assertagile.workshop.gebtesting.test.pages.GoogleResultsPage
 import de.assertagile.workshop.gebtesting.test.pages.GoogleStartPage
 import geb.spock.GebSpec
 import org.openqa.selenium.Keys
@@ -38,5 +39,17 @@ class GoogleUiSpec extends GebSpec {
 
         then:
         page.searchInput.value() == page.suggestions.first().text()
+    }
+
+    def "clicking on a suggestion opens the result page for the suggestion"() {
+        given:
+        GoogleStartPage page = to(GoogleStartPage)
+        page.searchInput = "t"
+
+        when:
+        page.suggestions.first().click()
+
+        then:
+        at(GoogleResultsPage)
     }
 }
