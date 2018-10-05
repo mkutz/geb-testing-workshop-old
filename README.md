@@ -7,22 +7,21 @@ Workshop for UI testing with [Geb] and [Spock]. The workshop won't go into any d
 
 Project Setup with Maven
 ------------------------
-There are several options to get Groovy code compiled in Maven. See the Groovy documentation on [Groovy Maven integration] for an overview.
-
 In order to get [Spock] and [Geb] into our Maven project, we need to do the following in our [pom.xml].
 
 1. Add Groovy as a (test) dependency (see [pom.xml](pom.xml#L27-L32)).
 2. Add Spock dependency (see [pom.xml](pom.xml#L34-L39)).
 3. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
 4. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
-5. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)). It is used in [GebConfig] to download and setup the driver binary (see [GebConfig](src/test/resources/GebConfig.groovy#L28-L35)).
+5. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)). It is used in [GebConfig] to download and setup the driver binary (e.g. see [GebConfig](src/test/resources/GebConfig.groovy#L38)).
 6. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L79)).
-7. Add [GMavenPlus] to compile Groovy sources, since Maven’s default settings only compile Java (see [pom.xml](pom.xml#L81-L105)).
+7. Add [GMavenPlus] to compile Groovy sources, since Maven’s default settings only compile Java (see [pom.xml](pom.xml#L82-L105)).\
+  There are several alternatives to get Groovy code compiled in Maven. See the Groovy documentation on [Groovy Maven integration] for an overview.
 8. Make Maven Failsafe plugin aware of files ending with `*UiSpec` are test class files since its default is `*IT` and execute it during integration-test phase (see [pom.xml](pom.xml#L107-L125)).
 
 Geb Configuration
 -----------------
-This project already contains a [GebConfig.groovy] file. If you'd like to adjust the configuration for your own projects, please refer the the [Geb manual config section]. 
+This project already contains a [GebConfig] file. If you'd like to adjust the configuration for your own projects, please refer the the [Geb manual config section].
 
 Engine Check
 ------------
@@ -38,7 +37,7 @@ So lets check if everything works fine first:
   for [IntelliJ Idea](https://www.jetbrains.com/idea/download/).
   - If your browser just starts and then does nothing, you probably need a new version of Selenium. So change the
   version in the [pom.xml](pom.xml#L62-L67). Notice that you probably will also need a new version of
-  [WebDriverManager] (see [pom.xml](pom.xml#L69-L73)). You can also try to configure a different browser in the
+  [WebDriverManager] (see [pom.xml](pom.xml#L69-L74)). You can also try to configure a different browser in the
   [GebConfig].
   - If the test fails but generally executes, the structure of the Google start page might have changed and the test
   needs adjustments. Please check for [issues] and feel free to raise a new one.
@@ -96,7 +95,7 @@ Helpful Resources and Further Reading
 [Groovy documentation]: <http://www.groovy-lang.org/documentation.html>
 [Groovy Maven integration]: <http://docs.groovy-lang.org/latest/html/documentation/tools-groovyc.html#_maven_integration>
 
-[Spock]: <https://github.com/spockframework/spock>
+[Spock]: <http://spockframework.org/>
 [Spock manual]: <http://docs.spockframework.org/>
 [Spock Testing Workshop]: <https://github.com/mkutz/spock-testing-workshop>
 
