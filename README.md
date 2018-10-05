@@ -47,8 +47,8 @@ Part 1: The Browser
 -------------------
 First we'll use the Browser instance provided by `GebReportingSpec` to navigate to the main Google page at `http://google.com`.
 
-- [ ] Add a new feature method to [GoogleUiSpec], that checks if "the Google logo can be found on the Google start page".
-- [ ] Write another one to check if "the main search input field can be found".
+- [X] Add a new feature method to [GoogleUiSpec], that checks if "the Google logo can be found on the Google start page".
+- [X] Write another one to check if "the main search input field can be found".
 
 Part 2: Pages
 -------------
