@@ -14,13 +14,13 @@ There are several options to get Groovy code compiled in Maven. See the Groovy d
 In order to get [Spock] and [Geb] into our Maven project, we need to do the following in our [pom.xml].
 
 1. Add Groovy as a (test) dependency (see [pom.xml](pom.xml#L27-L32)).
-2. Add Spock dependency (see [pom.xml](pom.xml#L35-L40)).
-3. Add [GMavenPlus] to compile Groovy sources, since Maven’s default settings only compile Java (see [pom.xml](pom.xml#L82-L105)).
-4. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L79)).
-5. Make Maven Failsafe plugin aware of files ending with `*UiSpec` are test class files since its default is `*IT` and execute it during integration-test phase (see [pom.xml](pom.xml#L107-L125)).
-6. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
-7. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
-8. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)). It is used in [GebConfig] to download and setup the driver binary (see [GebConfig](src/test/resources/GebConfig.groovy#L28-L35)).
+2. Add Spock dependency (see [pom.xml](pom.xml#L34-L39)).
+3. Add Geb dependency (see [pom.xml](pom.xml#L41-L46)).
+4. Add Selenium dependency (see [pom.xml](pom.xml#L62-L67)).
+5. Add something to actually get a [WebDriver] implementation. In this project I chose [WebDriverManager], which can easily be utilized in [Geb]'s configuration (see [pom.xml](pom.xml#L69-L73)). It is used in [GebConfig] to download and setup the driver binary (see [GebConfig](src/test/resources/GebConfig.groovy#L28-L35)).
+6. Make Maven aware of `/src/test/groovy` being a test source directory since Maven’s default is `/src/test/java` (see [pom.xml](pom.xml#L79)).
+7. Add [GMavenPlus] to compile Groovy sources, since Maven’s default settings only compile Java (see [pom.xml](pom.xml#L81-L105)).
+8. Make Maven Failsafe plugin aware of files ending with `*UiSpec` are test class files since its default is `*IT` and execute it during integration-test phase (see [pom.xml](pom.xml#L107-L125)).
 
 Part 1: Engine Check
 --------------------
