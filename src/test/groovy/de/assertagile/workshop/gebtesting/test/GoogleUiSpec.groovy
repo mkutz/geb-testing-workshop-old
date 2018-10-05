@@ -2,6 +2,7 @@ package de.assertagile.workshop.gebtesting.test
 
 import de.assertagile.workshop.gebtesting.test.pages.GoogleStartPage
 import geb.spock.GebSpec
+import org.openqa.selenium.Keys
 
 class GoogleUiSpec extends GebSpec {
 
@@ -24,5 +25,18 @@ class GoogleUiSpec extends GebSpec {
 
         then:
         page.suggestions
+    }
+
+    def "the search input content is changed to a suggestion selected by down key"() {
+        given:
+        GoogleStartPage page = to(GoogleStartPage)
+        page.searchInput = "t"
+        waitFor { page.suggestions }
+
+        when:
+        page.searchInput << Keys.DOWN
+
+        then:
+        page.searchInput.value() == page.suggestions.first().text()
     }
 }

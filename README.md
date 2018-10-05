@@ -64,7 +64,7 @@ Web pages often contain dynamic elements these days. While these may appear imme
 
 - [X] Add a new feature method, which checks if "search suggestions are shown on typing once character".\
   Note that the suggestions appear quite fast but not immediately. You might need to `waitFor` it.
-- [ ] Write a feature method to verify that "the search input content is changed to a suggestion selected by down key"
+- [X] Write a feature method to verify that "the search input content is changed to a suggestion selected by down key"
 - [ ] Write another feature method to check that "clicking on a suggestion opens the result page for the suggestion". Create a `GoogleResultsPage` with an `at` check for this test.
 
 Part 4: Configuration
