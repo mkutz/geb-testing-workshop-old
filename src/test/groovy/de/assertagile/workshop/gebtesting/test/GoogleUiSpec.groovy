@@ -14,4 +14,15 @@ class GoogleUiSpec extends GebSpec {
         expect:
         to(GoogleStartPage).searchInput
     }
+
+    def "search suggestions are shown on typing once character"() {
+        given:
+        GoogleStartPage page = to(GoogleStartPage)
+
+        when:
+        page.searchInput = "t"
+
+        then:
+        page.suggestions
+    }
 }
