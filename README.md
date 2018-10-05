@@ -55,7 +55,7 @@ Part 2: Pages
 If you did not refactor your test code, you now have at least one duplicate line of code for navigating to the Google page. Also you have put some knowledge about the page structure into your test, which will probably keep being duplicated: the selector for the main search input.
 
 - [ ] Create a `GoogleStartPage` class containing the URL. Now change your features to use the `to` instead of `go` for navigating to the page.
-- [ ] Add an `at` check to your page. Use your selector for the bigger Google logo for this. Now use `at` in your first feature method instead of checking for the logo explicitly. 
+- [ ] Add an `at` check to your page. Use your selector for the bigger Google logo for this. Now shorten your first feature method to one single call.
 - [ ] Move your selector for the main search input field to the page's content.
 - [ ] Refactor your features to use the `GoogleStartPage` and contain no more knowledge about the HTML structure.
 
