@@ -31,6 +31,12 @@ reportsDir = "target/geb-reports"
 reportOnTestFailureOnly = true
 
 /*
+ * this should prevent issues with Firefox
+ * see http://www.gebish.org/manual/current/#waiting-for-base-navigator
+ */
+baseNavigatorWaiting = true
+
+/*
  * using WebDriverManager
  * see https://github.com/bonigarcia/webdrivermanager
  */
