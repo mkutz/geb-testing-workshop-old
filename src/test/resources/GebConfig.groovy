@@ -12,10 +12,22 @@ import org.openqa.selenium.remote.RemoteWebDriver
  * See http://www.gebish.org/manual/current/#configuration for further details.
  */
 
+/*
+ * set the browser's base URL
+ * see http://www.gebish.org/manual/current/#configuration-base-url
+ */
 baseUrl = "https://google.com"
 
+/*
+ * set directory for reports
+ * see http://www.gebish.org/manual/current/#reports-directory-configuration
+ */
 reportsDir = "target/geb-reports"
 
+/*
+ * don't create reports for successful tests
+ * see http://www.gebish.org/manual/current/#report-test-failures-configuration
+ */
 reportOnTestFailureOnly = true
 
 /*
