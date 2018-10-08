@@ -38,7 +38,7 @@ class GoogleUiSpec extends GebReportingSpec {
         page.searchInput << Keys.DOWN
 
         then:
-        page.searchInput.value() == page.suggestions.first().text()
+        waitFor { page.searchInput.value() == page.suggestions.first().text() }
     }
 
     def "clicking on a suggestion opens the result page for the suggestion"() {
