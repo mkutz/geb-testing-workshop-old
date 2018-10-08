@@ -22,7 +22,7 @@ class GoogleUiSpec extends GebReportingSpec {
         GoogleStartPage page = to(GoogleStartPage)
 
         when:
-        page.searchInput = "t"
+        page.searchInput.text = "t"
 
         then:
         page.suggestions
@@ -31,11 +31,11 @@ class GoogleUiSpec extends GebReportingSpec {
     def "the search input content is changed to a suggestion selected by down key"() {
         given:
         GoogleStartPage page = to(GoogleStartPage)
-        page.searchInput = "t"
+        page.searchInput.text = "t"
         waitFor { page.suggestions }
 
         when:
-        page.searchInput << Keys.DOWN
+        page.searchInput.text << Keys.DOWN
 
         then:
         page.searchInput.value() == page.suggestions.first().text()
@@ -44,7 +44,7 @@ class GoogleUiSpec extends GebReportingSpec {
     def "clicking on a suggestion opens the result page for the suggestion"() {
         given:
         GoogleStartPage page = to(GoogleStartPage)
-        page.searchInput = "t"
+        page.searchInput.text = "t"
 
         when:
         page.suggestions.first().click()
