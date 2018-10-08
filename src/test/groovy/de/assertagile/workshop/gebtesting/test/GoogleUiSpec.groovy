@@ -64,7 +64,7 @@ class GoogleUiSpec extends GebReportingSpec {
 
         then:
         verifyAll(page.results.first()) {
-            heading.text().startsWith("Wikipedia")
+            heading.text().contains("Wikipedia")
             href.text().contains("wikipedia.org")
         }
     }
