@@ -16,6 +16,8 @@ baseUrl = "https://google.com"
 
 reportsDir = "target/geb-reports"
 
+reportOnTestFailureOnly = true
+
 /*
  * using WebDriverManager
  * see https://github.com/bonigarcia/webdrivermanager
