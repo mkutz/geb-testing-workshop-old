@@ -9,7 +9,7 @@ class GoogleStartPage extends Page {
     static at = { $("#hplogo") }
 
     static content = {
-        searchInput { $("#lst-ib") }
+        searchInput { $("input", name: "q") }
         suggestions(wait: true) { $(".sbqs_c") }
     }
 }
