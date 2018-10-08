@@ -9,6 +9,6 @@ class GoogleResultsPage extends Page {
     static at = { $("#navcnt") }
 
     static content = {
-        results { $(".g").moduleList(ResultModule) }
+        results { $(".rc").moduleList(ResultModule) }
     }
 }
