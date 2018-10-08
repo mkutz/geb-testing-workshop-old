@@ -2,10 +2,10 @@ package de.assertagile.workshop.gebtesting.test
 
 import de.assertagile.workshop.gebtesting.test.pages.GoogleResultsPage
 import de.assertagile.workshop.gebtesting.test.pages.GoogleStartPage
-import geb.spock.GebSpec
+import geb.spock.GebReportingSpec
 import org.openqa.selenium.Keys
 
-class GoogleUiSpec extends GebSpec {
+class GoogleUiSpec extends GebReportingSpec {
 
     def "the Google logo can be found on the Google start page"() {
         expect:

@@ -14,6 +14,8 @@ import org.openqa.selenium.remote.RemoteWebDriver
 
 baseUrl = "https://google.com"
 
+reportsDir = "target/geb-reports"
+
 /*
  * using WebDriverManager
  * see https://github.com/bonigarcia/webdrivermanager

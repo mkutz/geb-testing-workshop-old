@@ -72,7 +72,7 @@ Part 4: Configuration
 Let's explore the possibilities of the [GebConfig] file.
 
 - [X] Configure the `baseUrl` in the [GebConfig] script and change your `GoogleStartPage` to rely on that.
-- [ ] Configure a `reportsDir` and make your [GoogleUiSpec] extend `GebReportingSpec` instead of `GebSpec`. Run your tests and check the directory.
+- [X] Configure a `reportsDir` and make your [GoogleUiSpec] extend `GebReportingSpec` instead of `GebSpec`. Run your tests and check the directory.
 - [ ] Make Geb only create a report for failed tests. Check the effects in the reports directory.
 
 Part 5: Modules
