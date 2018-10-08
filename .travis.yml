@@ -13,5 +13,6 @@ script:
   - mvn verify -B -D geb.env=travis
 
 after_script:
+  - cat target/geb-reports/**/*.html
   - docker stop selenium-node-firefox selenium-node-chrome selenium-hub
   - docker network rm grid
