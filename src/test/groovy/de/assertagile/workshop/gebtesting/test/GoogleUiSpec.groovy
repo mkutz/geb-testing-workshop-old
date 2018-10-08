@@ -52,4 +52,9 @@ class GoogleUiSpec extends GebReportingSpec {
         then:
         at(GoogleResultsPage)
     }
+
+    def "the results page can be reached via URL"() {
+        expect:
+        to(GoogleResultsPage, q: "test")
+    }
 }
