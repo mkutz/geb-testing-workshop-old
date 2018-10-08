@@ -10,6 +10,6 @@ class GoogleStartPage extends Page {
 
     static content = {
         searchInput { $("input", name: "q") }
-        suggestions(wait: true) { $(".sbqs_c") }
+        suggestions(wait: true) { $(role: "option") }
     }
 }
