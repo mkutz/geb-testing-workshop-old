@@ -35,7 +35,7 @@ class GoogleUiSpec extends GebReportingSpec {
         waitFor { page.suggestions }
 
         when:
-        page.searchInput.text << Keys.DOWN
+        page.searchInput << Keys.DOWN
 
         then:
         page.searchInput.value() == page.suggestions.first().text()
