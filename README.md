@@ -66,6 +66,7 @@ Web pages often contain dynamic elements these days. While these may appear imme
   Note that the suggestions appear quite fast but not immediately. You might need to `waitFor` it.
 - [X] Write a feature method to verify that "the search input content is changed to a suggestion selected by down key"
 - [X] Write another feature method to check that "clicking on a suggestion opens the result page for the suggestion". Create a `GoogleResultsPage` with an `at` check for this test.
+- [ ] Add an `url` to your `GoogleResultsPage`, then create another feature method, which tests that "the results page can be reached via URL".
 
 Part 4: Configuration
 ---------------------
