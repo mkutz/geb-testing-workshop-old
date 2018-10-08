@@ -12,6 +12,8 @@ import org.openqa.selenium.remote.RemoteWebDriver
  * See http://www.gebish.org/manual/current/#configuration for further details.
  */
 
+baseUrl = "https://google.com"
+
 /*
  * set the browser's base URL
  * see http://www.gebish.org/manual/current/#configuration-base-url
