@@ -71,7 +71,7 @@ Part 4: Configuration
 ---------------------
 Let's explore the possibilities of the [GebConfig] file.
 
-- [ ] Configure the `baseUrl` in the [GebConfig] script and change your `GoogleStartPage` to rely on that.
+- [X] Configure the `baseUrl` in the [GebConfig] script and change your `GoogleStartPage` to rely on that.
 - [ ] Configure a `reportsDir` to get reports for each test.
 - [ ] Make Geb only create a report for failed tests.
 

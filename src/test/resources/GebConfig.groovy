@@ -12,6 +12,8 @@ import org.openqa.selenium.remote.RemoteWebDriver
  * See http://www.gebish.org/manual/current/#configuration for further details.
  */
 
+baseUrl = "https://google.com"
+
 /*
  * using WebDriverManager
  * see https://github.com/bonigarcia/webdrivermanager
