@@ -81,9 +81,7 @@ Part 5: Modules
 Web application often contain an element multiple times. E.g. quite many pages contain elements (text fields, checkboxes, radio buttons, buttons). [Geb] `Modules` describing the structure of those elements and hold possible interactions with them. It also allows to create your own `Module` classes. 
 
 - [X] Use a `TextInput` module for the search input field. Understand how this might be useful.
-- [ ] Create a `ResultModule` allows to access search result's title and URL. Add a list of `ResultModule`s to your `GoogleResultsPage`.
-- [ ] Add a feature to your [GoogleUiSpec] to check that "when searching for 'Wiki', the top result is
-'Wikipedia'".
+- [ ] Create a `ResultModule` allows to access search result's title and URL. Add a list of `ResultModule`s to your `GoogleResultsPage`. Add a feature to your [GoogleUiSpec] to check that "when searching for 'Wiki', the top result is 'Wikipedia'".
 - [ ] Create a `SuggestionModule`, which allows to get the text actually typed and the supplement assumed by Google. Write a test verifying that "all suggestions start with the user typed text"
 
 Helpful Resources and Further Reading
