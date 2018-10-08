@@ -68,4 +68,16 @@ class GoogleUiSpec extends GebReportingSpec {
             href.text().contains("wikipedia.org")
         }
     }
+
+    def "all suggestions start with the user typed text"() {
+        given:
+        String typedText = "t"
+        GoogleStartPage page = to(GoogleStartPage)
+
+        when:
+        page.searchInput.text = typedText
+
+        then:
+        page.suggestions.every { it.typed == typedText }
+    }
 }

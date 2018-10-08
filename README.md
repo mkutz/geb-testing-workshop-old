@@ -82,7 +82,7 @@ Web application often contain an element multiple times. E.g. quite many pages c
 
 - [X] Use a `TextInput` module for the search input field. Understand how this might be useful.
 - [X] Create a `ResultModule` allows to access search result's title and URL. Add a list of `ResultModule`s to your `GoogleResultsPage`. Add a feature to your [GoogleUiSpec] to check that "when searching for 'Wiki', the top result is 'Wikipedia'".
-- [ ] Create a `SuggestionModule`, which allows to get the text actually typed and the supplement assumed by Google. Write a test verifying that "all suggestions start with the user typed text"
+- [X] Create a `SuggestionModule`, which allows to get the text actually typed and the supplement assumed by Google. Write a test verifying that "all suggestions start with the user typed text"
 
 Helpful Resources and Further Reading
 -------------------------------------
