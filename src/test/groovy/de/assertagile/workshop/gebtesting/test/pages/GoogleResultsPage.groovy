@@ -7,4 +7,8 @@ class GoogleResultsPage extends Page {
     static url = "/search"
 
     static at = { $("#navcnt") }
+
+    static content = {
+        results { $(".g").moduleList(ResultModule) }
+    }
 }

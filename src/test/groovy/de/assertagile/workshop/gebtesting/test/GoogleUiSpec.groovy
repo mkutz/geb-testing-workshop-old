@@ -57,4 +57,15 @@ class GoogleUiSpec extends GebReportingSpec {
         expect:
         to(GoogleResultsPage, q: "test")
     }
+
+    def "when searching for 'Wiki', the top result is 'Wikipedia'"() {
+        when:
+        GoogleResultsPage page = to(GoogleResultsPage, q: "wiki")
+
+        then:
+        verifyAll(page.results.first()) {
+            heading.text().startsWith("Wikipedia")
+            href.text().contains("wikipedia.org")
+        }
+    }
 }
