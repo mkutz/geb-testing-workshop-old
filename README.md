@@ -1,4 +1,4 @@
-Geb Testing Workshop (WORK IN PROGRESS)
+Geb Testing Workshop
 ====================
 
 [![Build Status](https://travis-ci.org/mkutz/geb-testing-workshop.svg?branch=master)](https://travis-ci.org/mkutz/geb-testing-workshop)
