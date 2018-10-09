@@ -5,7 +5,7 @@ import geb.Module
 class SuggestionModule extends Module {
 
     static content = {
-        supplement { $("b").text() }
-        typed { text() - supplement }
+        supplement(wait: true) { $("b").text() }
+        typed(wait: true) { text() - supplement }
    }
 }
