@@ -11,6 +11,6 @@ class GoogleStartPage extends Page {
 
     static content = {
         searchInput { $("input", name: "q").module(TextInput) }
-        suggestions(wait: true) { $(role: "option").moduleList(SuggestionModule) }
+        suggestions(wait: true) { $(role: "listbox").find(role: "option").moduleList(SuggestionModule) }
     }
 }
