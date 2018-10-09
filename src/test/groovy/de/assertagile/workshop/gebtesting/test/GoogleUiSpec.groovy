@@ -78,6 +78,6 @@ class GoogleUiSpec extends GebReportingSpec {
         page.searchInput.text = typedText
 
         then:
-        page.suggestions.every { it.typed == typedText }
+        page.suggestions.every { it.typed.startsWith(typedText) }
     }
 }
