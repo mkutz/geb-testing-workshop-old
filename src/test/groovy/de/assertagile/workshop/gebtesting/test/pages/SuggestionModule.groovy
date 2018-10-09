@@ -7,5 +7,11 @@ class SuggestionModule extends Module {
     static content = {
         supplement(wait: true) { $("b").text() }
         typed(wait: true) { text() - supplement }
-   }
+    }
+
+
+    @Override
+    String toString() {
+        "${super.toString()} typed: \"${typed}\", supplement: \"${supplement}\""
+    }
 }
