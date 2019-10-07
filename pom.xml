@@ -42,7 +42,7 @@
         <dependency>
             <groupId>org.gebish</groupId>
             <artifactId>geb-spock</artifactId>
-            <version>3.0.1</version>
+            <version>3.1</version>
             <scope>test</scope>
         </dependency>
 
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>3.6.1</version>
+            <version>3.7.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -83,7 +83,7 @@
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
-                <version>1.7.1</version>
+                <version>1.8.0</version>
                 <executions>
                     <execution>
                         <goals>
