@@ -48,7 +48,7 @@ firefoxTestcontainers = {
 driver = chrome
 
 environments {
-    travis {
+    ci {
         driver = firefoxTestcontainers
     }
 }
