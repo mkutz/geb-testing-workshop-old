@@ -1,8 +1,6 @@
 Geb Testing Workshop
 ====================
 
-[![Build Status](https://travis-ci.org/mkutz/geb-testing-workshop.svg?branch=master)](https://travis-ci.org/mkutz/geb-testing-workshop)
-
 Workshop for UI testing with [Geb] and [Spock]. The workshop won't go into any detail about [Spock] or testing in [Groovy], so if you realize you don't understand the general structure of the test files, please checkout [Spock manual], the [Groovy documentation] or my [Spock Testing Workshop] first ;).
 
 Project Setup with Maven
