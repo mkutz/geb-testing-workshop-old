@@ -24,8 +24,9 @@ chromeHeadless = {
     WebDriverManager.chromedriver().setup()
     return new ChromeDriver(new ChromeOptions().addArguments("headless", "disable-gpu"))
 }
-chromeTestcontainers {
-    BrowserWebDriverContainer container = new BrowserWebDriverContainer().withCapabilities(new ChromeOptions())
+chromeTestcontainers = {
+    BrowserWebDriverContainer container = new BrowserWebDriverContainer()
+            .withCapabilities(new ChromeOptions())
     container.start()
     return container.webDriver
 }
@@ -37,8 +38,9 @@ firefoxHeadless = {
     WebDriverManager.firefoxdriver().setup()
     return new FirefoxDriver(new FirefoxOptions().addArguments("-headless"))
 }
-chromeTestcontainers {
-    BrowserWebDriverContainer container = new BrowserWebDriverContainer().withCapabilities(new FirefoxOptions())
+firefoxTestcontainers = {
+    BrowserWebDriverContainer container = new BrowserWebDriverContainer()
+            .withCapabilities(new FirefoxOptions())
     container.start()
     return container.webDriver
 }
