@@ -22,6 +22,6 @@ jobs:
         with:
           java-version: 11.x
       - name: build
-        run: mvn build -B
+        run: mvn package -B
       - name: run geb tests
         run: mvn verify -B -D geb.env=ci
