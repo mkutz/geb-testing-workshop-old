@@ -3,7 +3,7 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.firefox.FirefoxOptions
-import org.openqa.selenium.remote.RemoteWebDriver
+import org.testcontainers.containers.BrowserWebDriverContainer
 
 /*
  * Configuration script for Geb tests. Configuration values might be overwritten using system properties or may be
@@ -24,8 +24,10 @@ chromeHeadless = {
     WebDriverManager.chromedriver().setup()
     return new ChromeDriver(new ChromeOptions().addArguments("headless", "disable-gpu"))
 }
-chromeDocker = {
-    return new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), new ChromeOptions())
+chromeTestcontainers {
+    BrowserWebDriverContainer container = new BrowserWebDriverContainer().withCapabilities(new ChromeOptions())
+    container.start()
+    return container.webDriver
 }
 firefox = {
     WebDriverManager.firefoxdriver().setup()
@@ -35,14 +37,16 @@ firefoxHeadless = {
     WebDriverManager.firefoxdriver().setup()
     return new FirefoxDriver(new FirefoxOptions().addArguments("-headless"))
 }
-firefoxDocker = {
-    return new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), new FirefoxOptions())
+chromeTestcontainers {
+    BrowserWebDriverContainer container = new BrowserWebDriverContainer().withCapabilities(new FirefoxOptions())
+    container.start()
+    return container.webDriver
 }
 
 driver = chrome
 
 environments {
     travis {
-        driver = firefoxDocker
+        driver = firefoxTestcontainers
     }
 }
