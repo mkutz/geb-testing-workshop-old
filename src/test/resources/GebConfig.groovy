@@ -16,39 +16,51 @@ import org.testcontainers.containers.BrowserWebDriverContainer
  * using WebDriverManager
  * see https://github.com/bonigarcia/webdrivermanager
  */
-chrome = {
+
+driver = {
     WebDriverManager.chromedriver().setup()
     return new ChromeDriver()
 }
-chromeHeadless = {
-    WebDriverManager.chromedriver().setup()
-    return new ChromeDriver(new ChromeOptions().addArguments("headless", "disable-gpu"))
-}
-chromeTestcontainers = {
-    BrowserWebDriverContainer container = new BrowserWebDriverContainer()
-            .withCapabilities(new ChromeOptions())
-    container.start()
-    return container.webDriver
-}
-firefox = {
-    WebDriverManager.firefoxdriver().setup()
-    return new FirefoxDriver()
-}
-firefoxHeadless = {
-    WebDriverManager.firefoxdriver().setup()
-    return new FirefoxDriver(new FirefoxOptions().addArguments("-headless"))
-}
-firefoxTestcontainers = {
-    BrowserWebDriverContainer container = new BrowserWebDriverContainer()
-            .withCapabilities(new FirefoxOptions())
-    container.start()
-    return container.webDriver
-}
-
-driver = chrome
 
 environments {
-    ci {
-        driver = firefoxTestcontainers
+    chrome {
+        driver = {
+            WebDriverManager.chromedriver().setup()
+            return new ChromeDriver()
+        }
+    }
+    chromeHeadless {
+        driver = {
+            WebDriverManager.chromedriver().setup()
+            return new ChromeDriver(new ChromeOptions().addArguments("headless", "disable-gpu"))
+        }
+    }
+    chromeTestcontainers {
+        driver = {
+            BrowserWebDriverContainer container = new BrowserWebDriverContainer()
+                    .withCapabilities(new ChromeOptions())
+            container.start()
+            return container.webDriver
+        }
+    }
+    firefox {
+        driver = {
+            WebDriverManager.firefoxdriver().setup()
+            return new FirefoxDriver()
+        }
+    }
+    firefoxHeadless {
+        driver = {
+            WebDriverManager.firefoxdriver().setup()
+            return new FirefoxDriver(new FirefoxOptions().addArguments("-headless"))
+        }
+    }
+    firefoxTestcontainers {
+        driver = {
+            BrowserWebDriverContainer container = new BrowserWebDriverContainer()
+                    .withCapabilities(new FirefoxOptions())
+            container.start()
+            return container.webDriver
+        }
     }
 }

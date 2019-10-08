@@ -11,10 +11,10 @@ on:
 jobs:
   test:
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        browser: [firefox, chrome]
 
     steps:
       - uses: actions/checkout@v1
@@ -24,4 +24,4 @@ jobs:
       - name: build
         run: mvn package -B
       - name: run geb tests
-        run: mvn verify -B -D geb.env=ci
+        run: mvn verify -B -D geb.env=${{ matrix.browser }}Testcontainers
