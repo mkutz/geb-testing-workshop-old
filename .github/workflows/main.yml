@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - solutions
+  schedule:
+    - cron: 0 0 * * 1-5
+
+jobs:
+  test:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 11.x
+      - name: build
+        run: mvn build -B
+      - name: run geb tests
+        run: mvn verify -B -D geb.env=ci
